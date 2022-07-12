@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta charset="utf-8">
+    <title>Brushable bar chart - Horizontal - V</title>
+  
+    <!-- Google fonts -->
+    <!--<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>-->
+  
+    <!-- <script src="d3.v3.js"></script> -->
+    <!-- <script src="https://d3js.org/d3.v3.min.js"></script> -->
+    <link rel="stylesheet" href="question5.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="d3-fisheye.js"></script>
+
+
+   
+
+</head>
+
+<body>
+    
+    <div>
+        <form>
+            <label for="cars">Choose a car:</label>
+            <select name="cars" id="cars">
+              <option value="MPG">MPG</option>
+              <option value="Cylinders">Cylinders</option>
+              <option value="Displacement">Displacement</option>
+              <option value="Horsepower">Horsepower</option>
+              <option value="Weight">Weight</option>
+              <option value="Acceleration">Acceleration</option>
+              <option value="Model">Model</option>
+            </select>
+            <br><br>
+            <input type = "button" onclick = "makegraphs(document.getElementById('cars').value)" value = "Display">  
+          </form>
+
+    </div>
+
+    <svg width="1000" height="720"></svg>
+    
+    <!-- <script src="question5.js"></script> -->
+    <script src="question55.js"></script>
+    
+    
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+#flash_button{
+    fill:black;
+    stroke:black;
+    stroke-width:1;
+    opacity:1;
+}
+#flash_button_case{
+    fill:black;
+    stroke:black;
+    stroke-width:1;
+    opacity:0.85;
+}
+#cam_frame{
+    fill:#E6E6FA;
+    stroke:black;
+    stroke-width:1;
+}
+#inner_rec{
+    fill:rgb(48, 44, 44);
+    stroke:black;
+    stroke-width:0.5;
+    opacity:100%
+}
+#view_finder{
+    fill:black;
+    stroke:pink;
+    stroke-width:0.5;
+    opacity:100%;
+}
+
+#first-outer-circle{
+    fill:#E6E6FA;
+}
+#second-inner-circle-stroke{
+    stroke:rgb(48, 44, 44); 
+    stroke-width:15; 
+    opacity:1;
+}
+
+#third-inner-circle{
+    fill:rgb(48, 44, 44);
+    stroke:rgb(65, 63, 63);
+    stroke-width:6;
+}
+
+#flash-first-layer{
+    fill:#E6E6FA; 
+}
+
+#flash-second-layer{
+    fill:grey; 
+    stroke-width:5; 
+    opacity:0.4;
+}
+
+
+/* Adding Hover Features */
+/* #flash_button:hover{
+    fill: chartreuse;
+
+} */
+#flash_button:hover {
+    y:42;
+    height:2.5;
+    fill: #00ffff;
+    stroke: #00ffff;
+
+}
+
+#flash_button:hover  ~ #view_finder-lens {
+    fill: #fbff00;
+}
+#flash_button:hover  ~ #view_finder {
+    fill: #f3f5a2;
+}
+ 

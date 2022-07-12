@@ -1,0 +1,69 @@
+<html>
+    
+<head> 
+    <title> Data Visualization D3 Practive    </title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+ 
+    <svg id="camera" width="350" height="250">
+
+    <defs>
+        <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#a5f8f0;stop-opacity:1  " />
+            <stop offset="100%" style="stop-color:#23776f;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+
+    <defs>
+        <linearGradient id="grad3" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#9a9e9e;stop-opacity:1  " />
+            <stop offset="100%" style="stop-color:#3d3f3f;stop-opacity:1" />
+        </linearGradient>
+    </defs>    
+        <rect id='flash_button' x="35" y="40" rx="8" ry="1" width="30" height="5" />
+        <rect id='flash_button_case' x="30" y="45" rx="0.5" ry="0.5" width="40" height="10"  />
+        <rect id='cam_frame' x="10" y="55" rx="15" ry="15" width="300" height="190" />
+        <rect id='inner_rec' x="10" y="80" width="300" height="140" />
+        <rect id='view_finder' x="25" y="95" rx="04" ry="03" width="50" height="20"  />
+        <rect id='view_finder-lens' x="35" y="95.5" rx="04" ry="01" width="40" height="15 " fill="url(#grad2)"/>
+
+        <path id='flash-first-layer' d="M 120 10 L 230 10 
+                            A 15 10 0 0 1 240 15
+                            L 260 55 
+                            L 90 55
+                            L 110 15
+                            A 15 20 0 0 1 120 10 " 
+                            />
+                            
+        <path id='flash-second-layer' d="M 130 20 L 220 20 
+                            A 20 10 1 0 1 230 25
+                            L 245 55 
+                            L 105 55
+                            L 120 25
+                            A 20 10 0 0 1 130 20 "  
+                            />
+                            
+        <path id='flash-third-layer' d="M 140 30 L 210 30 
+                            A 25 10 1 0 1 220 35
+                            L 230 55 
+                            L 120 55
+                            L 130 35
+                            A 30 0 0 0 1 140 30 " 
+                            fill="url(#grad3)"/>
+                            
+    
+      <circle id="first-outer-circle" cx="210" cy="150" r="90"  />
+      <circle id="second-inner-circle-stroke" cx="210" cy="150" r="76" />
+      <circle id="second-inner-circle" cx="210" cy="150" r="77" fill="url(#grad3)"/>
+      <circle id="third-inner-circle" cx="210" cy="150" r="55" />
+      <circle id="forth-inner-circle" cx="210" cy="150" r="48" fill="url(#grad2)" />
+      
+    </svg>
+
+
+</body>
+
+</html>

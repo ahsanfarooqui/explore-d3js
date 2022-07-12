@@ -1,0 +1,128 @@
+<html>
+    
+<head> 
+    <title> Data Visualization D3 Practive    </title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="DV Assignment\Q # 3\/style.css ">
+
+</head>
+<body>
+
+ 
+    <script>
+    
+    function pie_angle_radian(char_count, words_len){ return (char_count*2*3.14/words_len) }
+    function createPieChart(g, name = "Haseeb Waheed")
+    {
+    // let name = "Haseeb Waheed";
+    let temp = "";
+    let text1 = "";
+    var AD = 0;
+    var EH = 0;
+    var IL = 0;
+    var MP = 0;
+    var QU = 0;
+    var VZ = 0;
+    var char_count = 0;
+    for (let i = 0; i <  name.length; i++)
+      {
+      temp = name.charCodeAt(i) 
+          if ((temp >=65 && temp<=68 ) || (temp >=97 && temp<=100 )  ) // A - D 
+            {  AD+=1 
+              char_count+=1 }
+          if ((temp >=69 && temp<=72 ) || (temp >=97 && temp<=100 )  ) // E - H 
+            { EH +=1 
+              char_count+=1 }
+          if ((temp >=73 && temp<=76 ) || (temp >=105 && temp<=108 )  ) // I - L
+            { IL+=1  ; char_count+=1 ;}
+          if ((temp >=77 && temp<=80 ) || (temp >=109 && temp<=112 )  ) // M - P
+            {  MP+=1 ; char_count+=1 ;}
+          if ((temp >=81 && temp<=85 ) || (temp >=113 && temp<=117 )  ) // Q - U
+            { QU+=1 ; char_count+=1 ;}
+          if ((temp >=86 && temp<=90 ) || (temp >=118 && temp<=122 )  ) // V - Z
+            { VZ+=1 ; char_count+=1 ;}
+      }
+ 
+      var angle_array = [0, pie_angle_radian(AD, char_count) , pie_angle_radian(EH, char_count), pie_angle_radian(IL, char_count), 
+      pie_angle_radian(MP, char_count) ,pie_angle_radian(QU, char_count) , pie_angle_radian(VZ, char_count)];
+
+      
+      angle_array = angle_array.sort()
+   
+
+      
+      var ellipse = g.selectAll('path')
+                    .data(angle_array)
+                    .enter()
+                    .append("path")
+                    .attr( "d" , function (d,i) {
+                      var angle = 0;
+                      var prev_angle = 0
+                      for (let j  = 0; j <= i; j++) 
+                        { prev_angle = angle;
+                          angle+= angle_array[j];                          
+                        } 
+                        
+                          var x = 200;
+                          var y = 200;
+                          var r = 200;
+                          pre_x = x + r * Math.sin(prev_angle);
+                          pre_y = y - r * Math.cos(prev_angle);
+                          x = x + r * Math.sin(angle);
+                          y = y - r * Math.cos(angle);
+                          return ("M200,200 L"+pre_x+" "+pre_y+" A 200 200 0 0 1"+x+" "+y);
+                        }
+                      )
+                    .attr("fill",function(d,i){ var color = ["blue", "orange","grey","yellow","#5E67F3","#3AEAD8",'brown']; return color[i];} )
+                    .attr( "text-shadow",function(d){return "2px 2px red";}  )
+
+
+// //  Adding Legend in SVG 
+ var data = [1,2,3,4,5,6]                   
+ var leg = g.selectAll('rect')
+            .data(data) 
+            .enter()
+            .append("rect") 
+            .attr("x", function(d,i){ return 80*i; })
+            .attr("y", 450)
+            .attr("height", "10")
+            .attr("width", "10")
+            .style("fill",function(d,i){ var color = ["blue", "orange","grey","yellow","#5E67F3","#3AEAD8",'brown']; return color[i];} )
+
+  var name = ["A - D", "E - H", "I - L", "M - P", "Q - U", "V - Z"]             
+  var text = g.selectAll('text')
+              .data(data) 
+              .enter()
+              .append('text').text(function(d,i){ return name[i]; })
+              .attr("x", function(d,i){ return 80*i+15; })
+              .attr("y", 460)
+              .attr('fill', 'black')
+
+    
+
+    }
+      // Creating an SVG
+      var width = 500;
+      var height = 500;
+
+      var canvus = d3.select("body")
+                      .append("svg")
+                      .attr("width", width)
+                      .attr("height", height)
+                      
+      var g = canvus.append("g")
+                  .attr("transform", function(d, i) {
+                          return "translate(0,0)";
+                  });  
+                  
+                  
+
+// Calling Function
+  createPieChart(g,"Ahsan Farooqui" );     
+ 
+
+   </script>
+
+</body>
+
+</html>

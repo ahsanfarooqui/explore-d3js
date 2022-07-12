@@ -1,0 +1,30 @@
+h1{
+
+    font-size:x-large;
+    color: blue;
+
+}
+
+.label{
+
+    font-size:25px;
+    font-weight:bold;
+    fill:black;
+
+}
+
+/* .keya:hover ~ .keyb {
+
+    fill:black;
+} */
+
+/* #keya:hover ~ #keyb {
+
+    fill:black;
+}  */
+
+#keyJohn:hover ~ #keya{
+
+    fill:black;
+}
+

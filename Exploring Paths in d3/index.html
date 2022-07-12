@@ -1,0 +1,61 @@
+<html>
+    
+<head> 
+    <title> Data Visualization D3 Practive    </title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+ 
+    <svg id="initials" width="1000" height="1000">
+        <!-- YOUR SVG HERE -->
+       
+
+        <defs>
+            <filter id="f3" x="0" y="0" width="200%" height="200%">
+              <feOffset result="offOut" in="SourceAlpha" dx="40" dy="40" />
+              <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+              <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+            </filter>
+          </defs>
+
+        <path class = "all_css" d="M 75 90 
+        A 3 1.7 -1 0 1 120 90 
+        L 120 131
+        L 115 135 
+        A 0.65 0.4 -10 0 1 85 110
+        A 0.5 0.02 -21 0 1 98 105
+        L 120 105
+        L 120 140
+         "  stroke="blue", fill="none"
+        />
+     	<polyline class = "all_css" points="05,50 05,140 05,95 65,95 65,50 65,140 "/>
+        <polyline class = "all_css" points="155,50 180,140 181,140 205,50 206,50 231,140 232,140 257,50"/>
+        
+        <path class = "all_css" d="M 257 90 
+        A 3 1.7 -1 0 1 302 90 
+        L 302 131
+        L 297 135 
+        A 0.65 0.4 -10 0 1 267 110
+        A 0.5 0.02 -21 0 1 280 105
+        L 302 105
+        L 302 140
+        "  
+        />
+
+
+        <path class = "all_css" d="M 400 400 L 400 500 A 10 2.7 -1 1 1 400 510
+        "  
+        />
+
+
+        <rect class = "period" x="135" y="130" rx="2.5" ry="3.5" width="10" height="10"  filter="url(#f3)"/>
+        <rect class = "period" x="317" y="130" rx="2.5" ry="3.5" width="10" height="10" />
+   
+        
+        </svg>
+
+</body>
+
+</html>
